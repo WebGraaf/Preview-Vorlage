@@ -1,0 +1,56 @@
+{
+  "fahrschule": {
+    "name": "Platzhalter Fahrschule",
+    "logo": "/default_images/logo_default.webp",
+    "kontakt": {
+      "telefon": "0123 456789",
+      "email": "info@fuehrerschein.de"
+    }
+  },
+  "standorte": [
+    {
+      "id": "hauptstandort",
+      "name": "Hauptstandort",
+      "adresse": "Musterstraße 123, 12345 Musterstadt",
+      "telefon": "+49 123 456789",
+      "oeffnungszeiten": "Mo-Fr: 8:00-18:00\nSa: 9:00-14:00\nSo: Geschlossen",
+      "googleMapsUrl": "https://maps.google.com/maps?q=Musterstra%C3%9Fe%20123,%2012345%20Musterstadt&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      "istHauptstandort": true
+    },
+    {
+      "id": "zweigstelle-nord",
+      "name": "Zweigstelle Nordeee",
+      "adresse": "Nordstraße 456, 54321 Nordstadt",
+      "telefon": "+49 987 654321",
+      "oeffnungszeiten": "Mo-Fr: 9:00-17:00\nSa: 10:00-15:00\nSo: Geschlossen",
+      "googleMapsUrl": "https://maps.google.com/maps?q=Nordstra%C3%9Fe%20456,%2054321%20Nordstadt&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      "istHauptstandort": false
+    }
+  ],
+  "fuehrerscheinklassen": {
+    "A": {
+      "aktiv": true,
+      "unterklassen": ["AM", "A1", "A2", "A"]
+    },
+    "B": {
+      "aktiv": true,
+      "unterklassen": ["B", "BE", "BF17"]
+    },
+    "C": {
+      "aktiv": true,
+      "unterklassen": ["C", "C1", "C1E", "CE"]
+    },
+    "D": {
+      "aktiv": true,
+      "unterklassen": ["D", "D1", "D1E", "DE"]
+    },
+    "L": {
+      "aktiv": true,
+      "unterklassen": ["L"]
+    },
+    "T": {
+      "aktiv": true,
+      "unterklassen": ["T"]
+    }
+  }
+}

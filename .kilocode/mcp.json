@@ -1,0 +1,81 @@
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
+      "env": {
+        "SystemRoot": "C:\\Windows",
+        "PROGRAMFILES": "C:\\Program Files"
+      },
+      "alwaysAllow": [
+        "click",
+        "handle_dialog",
+        "hover",
+        "press_key",
+        "navigate_page",
+        "select_page",
+        "wait_for",
+        "resize_page",
+        "get_network_request",
+        "list_network_requests",
+        "evaluate_script",
+        "get_console_message",
+        "list_console_messages",
+        "take_screenshot",
+        "new_page",
+        "take_snapshot",
+        "list_pages",
+        "close_page"
+      ],
+      "disabled": false
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "env": {
+        "DEFAULT_MINIMUM_TOKENS": ""
+      },
+      "alwaysAllow": [
+        "resolve-library-id"
+      ]
+    },
+    "shadcn-ui": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "shadcn@latest",
+        "mcp"
+      ],
+      "alwaysAllow": [
+        "list_components",
+        "get_docs",
+        "add_component",
+        "get_project_registries",
+        "list_items_in_registries",
+        "search_items_in_registries"
+      ]
+    },
+    "image-downloader": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-image-downloader"
+      ],
+      "env": {
+        "DEFAULT_SAVE_PATH": "${workspaceFolder}\\kunde_bilder"
+      },
+      "alwaysAllow": [
+        "download_image",
+        "download_images_batch"
+      ]
+    }
+  }
+}
