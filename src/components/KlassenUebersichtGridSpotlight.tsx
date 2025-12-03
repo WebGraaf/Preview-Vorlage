@@ -61,56 +61,33 @@ export const KlassenUebersichtGridSpotlight: React.FC<KlassenUebersichtGridSpotl
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 80%",
-            toggleActions: "play none none reverse"
+            toggleActions: "play none none none"
           }
         }
       );
 
-      // Animate cards with stagger
-      gsap.fromTo(cardsRef.current.filter(Boolean),
-        {
-          opacity: 0,
-          y: 60,
-          scale: 0.8,
-          rotationY: -15
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          rotationY: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "back.out(1.7)",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 70%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      // Add hover animations for cards
-      cardsRef.current.filter(Boolean).forEach((card) => {
+      // Animate cards with stagger - use wrapper div for scroll animation
+      cardsRef.current.filter(Boolean).forEach((card, index) => {
         if (!card) return;
-
-        const hoverTl = gsap.timeline({ paused: true });
-
-        hoverTl.to(card, {
-          y: -10,
-          scale: 1.05,
-          duration: 0.3,
-          ease: "power2.out"
-        })
-        .to(card.querySelector('.card-icon'), {
-          scale: 1.2,
-          rotation: 5,
-          duration: 0.3,
-          ease: "back.out(2)"
-        }, 0);
-
-        card.addEventListener('mouseenter', () => hoverTl.play());
-        card.addEventListener('mouseleave', () => hoverTl.reverse());
+        
+        gsap.fromTo(card,
+          {
+            opacity: 0,
+            y: 60,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: index * 0.15,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 70%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
       });
     }, sectionRef);
 
@@ -160,7 +137,7 @@ export const KlassenUebersichtGridSpotlight: React.FC<KlassenUebersichtGridSpotl
     <div
       key={index}
       ref={(el) => (cardsRef.current[index] = el)}
-      className={customWidth}
+      className={`${customWidth || ''} transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:scale-105`}
     >
       <KartenSpotlight
         className="hover:bg-primary-50 hover:border-primary-500 transition-all duration-300 group flex flex-col h-full p-6"

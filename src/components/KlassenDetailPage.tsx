@@ -85,7 +85,7 @@ const SubclassSection: React.FC<SubclassSectionProps> = ({ subclassCode, details
 
       <Section background="page-bg" padding="sm">
         <Container>
-          <div className={`${details.cardBgClass} rounded-xl p-8 ${details.cardBorderClass}`}>
+          <div className="bg-card-bg rounded-xl p-8 border border-card-border">
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {details.infoCards.map((card, index) => (
                 <InfoCard
@@ -143,7 +143,7 @@ export const KlassenDetailPage: React.FC<KlassenDetailPageProps> = ({ classCode 
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      <Section background="card-bg" padding="xl" className="pb-0">
+      <Section background="page-bg" padding="xl" className="pb-0">
         <Container>
           <div
             ref={headerRef as React.RefObject<HTMLDivElement>}
@@ -180,9 +180,9 @@ export const KlassenDetailPage: React.FC<KlassenDetailPageProps> = ({ classCode 
         );
       })}
 
-      <Section background="card-bg" padding="lg">
+      <Section background="page-bg" padding="lg">
         <Container>
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="bg-card-bg rounded-xl p-8 border border-card-border text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-text-heading mb-4">
               {cta.title}
             </h2>

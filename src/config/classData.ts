@@ -81,9 +81,9 @@ export const SUBCLASS_DETAILS: Record<string, SubclassDetailInfo> = {
       { iconName: 'Bike', title: 'Hubraum', description: 'Bis 125 ccm' },
       { iconName: 'Users', title: 'Fahrzeugtyp', description: 'Leichtkrafträder' }
     ],
-    variant: 'muted',
-    imagePosition: 'right',
-    cardBgClass: 'bg-card-tint',
+    variant: 'default',
+    imagePosition: 'left',
+    cardBgClass: 'bg-card-bg',
     cardBorderClass: 'border border-card-border'
   },
   'A2': {
@@ -127,10 +127,10 @@ export const SUBCLASS_DETAILS: Record<string, SubclassDetailInfo> = {
       { iconName: 'Bike', title: 'Hubraum', description: 'Unbegrenzt' },
       { iconName: 'Users', title: 'Fahrzeugtyp', description: 'Alle Motorräder' }
     ],
-    variant: 'outline',
-    imagePosition: 'right',
+    variant: 'default',
+    imagePosition: 'left',
     cardBgClass: 'bg-card-bg',
-    cardBorderClass: 'border-2 border-primary-500'
+    cardBorderClass: 'border border-card-border'
   },
   // Class B subclasses
   'B': {
@@ -172,9 +172,9 @@ export const SUBCLASS_DETAILS: Record<string, SubclassDetailInfo> = {
       { iconName: 'CheckCircle', title: 'Prüfung', description: 'Nur praktische Prüfung' },
       { iconName: 'Scale', title: 'Kombination', description: 'Zug bis ca. 7 t möglich' }
     ],
-    variant: 'muted',
-    imagePosition: 'right',
-    cardBgClass: 'bg-card-tint',
+    variant: 'default',
+    imagePosition: 'left',
+    cardBgClass: 'bg-card-bg',
     cardBorderClass: 'border border-card-border'
   },
   'BF17': {
@@ -216,9 +216,9 @@ export const SUBCLASS_DETAILS: Record<string, SubclassDetailInfo> = {
       { iconName: 'BookOpen', title: 'Schulung', description: 'Erwerb durch Fahrschulung' },
       { iconName: 'Key', title: 'Schlüsselzahl', description: 'Eintrag „96"' }
     ],
-    variant: 'muted',
-    imagePosition: 'right',
-    cardBgClass: 'bg-card-tint',
+    variant: 'default',
+    imagePosition: 'left',
+    cardBgClass: 'bg-card-bg',
     cardBorderClass: 'border border-card-border'
   },
   'B197': {
@@ -238,10 +238,10 @@ export const SUBCLASS_DETAILS: Record<string, SubclassDetailInfo> = {
       { iconName: 'CheckCircle', title: 'Nachweis', description: 'Schaltkompetenz bestätigt' },
       { iconName: 'Key', title: 'Schlüsselzahl', description: 'Eintrag „197"' }
     ],
-    variant: 'outline',
+    variant: 'default',
     imagePosition: 'left',
     cardBgClass: 'bg-card-bg',
-    cardBorderClass: 'border-2 border-primary-500'
+    cardBorderClass: 'border border-card-border'
   },
   // Class C subclasses
   'C': {
@@ -283,9 +283,9 @@ export const SUBCLASS_DETAILS: Record<string, SubclassDetailInfo> = {
       { iconName: 'Scale', title: 'Limit', description: 'Obergrenze 7.500 kg' },
       { iconName: 'FileText', title: 'Vorbesitz', description: 'Klasse B nötig' }
     ],
-    variant: 'muted',
-    imagePosition: 'right',
-    cardBgClass: 'bg-card-tint',
+    variant: 'default',
+    imagePosition: 'left',
+    cardBgClass: 'bg-card-bg',
     cardBorderClass: 'border border-card-border'
   },
   'C1E': {
@@ -327,10 +327,10 @@ export const SUBCLASS_DETAILS: Record<string, SubclassDetailInfo> = {
       { iconName: 'Scale', title: 'Grenzen', description: 'Durch Technik begrenzt' },
       { iconName: 'FileText', title: 'Vorbesitz', description: 'Klasse C nötig' }
     ],
-    variant: 'outline',
-    imagePosition: 'right',
+    variant: 'default',
+    imagePosition: 'left',
     cardBgClass: 'bg-card-bg',
-    cardBorderClass: 'border-2 border-primary-500'
+    cardBorderClass: 'border border-card-border'
   },
   // Class D subclasses
   'D': {
@@ -372,9 +372,9 @@ export const SUBCLASS_DETAILS: Record<string, SubclassDetailInfo> = {
       { iconName: 'Truck', title: 'Anhänger', description: 'Bis 750 kg zGG' },
       { iconName: 'FileText', title: 'Vorbesitz', description: 'Klasse B nötig' }
     ],
-    variant: 'muted',
-    imagePosition: 'right',
-    cardBgClass: 'bg-card-tint',
+    variant: 'default',
+    imagePosition: 'left',
+    cardBgClass: 'bg-card-bg',
     cardBorderClass: 'border border-card-border'
   },
   'D1E': {
@@ -416,10 +416,10 @@ export const SUBCLASS_DETAILS: Record<string, SubclassDetailInfo> = {
       { iconName: 'Ban', title: 'Anhänger', description: 'Keine Personenbeförderung' },
       { iconName: 'FileText', title: 'Erweiterung', description: 'Aufbauend auf Klasse D' }
     ],
-    variant: 'outline',
-    imagePosition: 'right',
+    variant: 'default',
+    imagePosition: 'left',
     cardBgClass: 'bg-card-bg',
-    cardBorderClass: 'border-2 border-primary-500'
+    cardBorderClass: 'border border-card-border'
   },
   // Class L
   'L': {

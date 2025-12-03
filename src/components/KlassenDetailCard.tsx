@@ -27,8 +27,8 @@ export const KlassenDetailCard: React.FC<KlassenDetailCardProps> = ({
 
   const variantClasses = {
     default: 'bg-card-bg border border-card-border',
-    muted: 'bg-card-tint border border-card-border',
-    outline: 'bg-transparent border-2 border-primary-500',
+    muted: 'bg-card-bg border border-card-border',
+    outline: 'bg-card-bg border border-card-border',
   };
 
   return (

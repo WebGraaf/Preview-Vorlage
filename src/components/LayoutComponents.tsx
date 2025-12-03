@@ -33,16 +33,21 @@ export const Section: React.FC<SectionProps> = ({
     xl: 'py-16'
   };
 
-  const backgroundClasses = {
-    transparent: '',
-    white: '',
-    gray: '',
-    blue: '',
-    'page-bg': ''
+  const backgroundClasses: Record<string, string> = {
+    transparent: 'bg-transparent',
+    white: 'bg-white',
+    gray: 'bg-secondary-100',
+    blue: 'bg-primary-50',
+    'page-bg': 'bg-page-bg',
+    'card-bg': 'bg-card-bg',
+    'card-tint': 'bg-card-tint',
+    'elevated-bg': 'bg-elevated-bg'
   };
 
+  const bgClass = backgroundClasses[background] || '';
+
   return (
-    <section className={`${backgroundClasses[background as keyof typeof backgroundClasses]} ${paddingClasses[padding as keyof typeof paddingClasses]} ${className}`}>
+    <section className={`${bgClass} ${paddingClasses[padding as keyof typeof paddingClasses]} ${className}`}>
       {children}
     </section>
   );

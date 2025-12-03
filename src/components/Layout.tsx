@@ -89,12 +89,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* Company Info */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">DriveAcademy GmbH</h3>
-              <p className="text-sm text-gray-300">
+              <p className="text-sm text-secondary-300">
                 Hauptstraße 123<br />
                 10115 Berlin<br />
                 Germany
               </p>
-              <p className="text-sm text-gray-300">&copy; 2025 DriveAcademy GmbH</p>
+              <p className="text-sm text-secondary-300">&copy; 2025 DriveAcademy GmbH</p>
             </div>
 
             {/* Contact */}
@@ -144,7 +144,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
+          <div className="mt-8 pt-8 border-t border-secondary-700 text-center text-sm text-secondary-400">
             <p>Geschäftsführer: Michael Schmidt | Fahrlehrererlaubnis: FL-2024-12345</p>
           </div>
         </Container>
