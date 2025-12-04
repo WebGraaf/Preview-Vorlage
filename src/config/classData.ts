@@ -565,7 +565,7 @@ export const CLASS_DATA: Record<HauptklasseCode, MainClassInfo> = {
     code: 'A',
     label: 'Klasse A',
     title: 'Führerschein Klasse A',
-    description: 'Die Klasse A berechtigt zum Führen von Krafträdern mit einem Hubraum von mehr als 50 cm³ und einer bauartbedingten Höchstgeschwindigkeit von mehr als 45 km/h. Dazu gehören Motorräder, Motorroller und dreirädrige Kraftfahrzeuge.',
+    description: 'Lerne Motorräder über 50 cm³ sicher zu fahren und genieße volle Freiheit auf zwei Rädern.',
     icon: Bike,
     route: '/fuehrerscheine/klasse-a',
     subclasses: [
@@ -579,7 +579,7 @@ export const CLASS_DATA: Record<HauptklasseCode, MainClassInfo> = {
     code: 'B',
     label: 'Klasse B',
     title: 'Führerschein Klasse B',
-    description: 'Die Klasse B berechtigt zum Führen von Kraftfahrzeugen mit einer zulässigen Gesamtmasse von nicht mehr als 3.500 kg und nicht mehr als 8 Sitzplätzen außer dem Fahrersitz. Dazu gehören PKW, Wohnmobile und leichte LKW.',
+    description: 'Erhalte deinen Pkw-Schein für Fahrzeuge bis 3,5 t und starte mobil in Alltag und Freizeit.',
     icon: Car,
     route: '/fuehrerscheine/klasse-b',
     subclasses: [
@@ -595,7 +595,7 @@ export const CLASS_DATA: Record<HauptklasseCode, MainClassInfo> = {
     code: 'C',
     label: 'Klasse C',
     title: 'Führerschein Klasse C',
-    description: 'Die Klasse C berechtigt zum Führen von Lastkraftwagen mit einer zulässigen Gesamtmasse von mehr als 3.500 kg. Dazu gehören LKW, Sattelzugmaschinen und andere schwere Nutzfahrzeuge.',
+    description: 'Fahre Lkw über 3,5 t sicher und professionell – ideal für den Einstieg in die Berufswelt.',
     icon: Truck,
     route: '/fuehrerscheine/klasse-c',
     subclasses: [
@@ -609,7 +609,7 @@ export const CLASS_DATA: Record<HauptklasseCode, MainClassInfo> = {
     code: 'D',
     label: 'Klasse D',
     title: 'Führerschein Klasse D',
-    description: 'Die Klasse D berechtigt zum Führen von Kraftomnibussen mit mehr als 8 Fahrgastplätzen. Dazu gehören Reisebusse, Linienbusse und andere Omnibusse für den Personentransport.',
+    description: 'Werde Busfahrer*in und transportiere mehr als 8 Fahrgäste sicher und verantwortungsvoll.',
     icon: Bus,
     route: '/fuehrerscheine/klasse-d',
     subclasses: [
@@ -623,7 +623,7 @@ export const CLASS_DATA: Record<HauptklasseCode, MainClassInfo> = {
     code: 'L',
     label: 'Klasse L',
     title: 'Führerschein Klasse L',
-    description: 'Die Klasse L berechtigt zum Führen von land- und forstwirtschaftlichen Zugmaschinen bis 40 km/h und bestimmten Arbeitsmaschinen bis 25 km/h, nur zu LoF-Zwecken.',
+    description: 'Fahre landwirtschaftliche Zugmaschinen bis 40 km/h – perfekt für Hof und Feldarbeit.',
     icon: Tractor,
     route: '/fuehrerscheine/klasse-l',
     subclasses: [
@@ -634,7 +634,7 @@ export const CLASS_DATA: Record<HauptklasseCode, MainClassInfo> = {
     code: 'T',
     label: 'Klasse T',
     title: 'Führerschein Klasse T',
-    description: 'Die Klasse T berechtigt zum Führen von Zugmaschinen bis 60 km/h und selbstfahrenden Arbeitsmaschinen bis 40 km/h, nur für land- und forstwirtschaftliche Zwecke.',
+    description: 'Steuere starke Zugmaschinen bis 60 km/h sicher und effizient in Landwirtschaft & Forst.',
     icon: Tractor,
     route: '/fuehrerscheine/klasse-t',
     subclasses: [

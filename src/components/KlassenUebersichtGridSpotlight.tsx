@@ -37,7 +37,7 @@ export const KlassenUebersichtGridSpotlight: React.FC<KlassenUebersichtGridSpotl
       return {
         icon: classInfo.icon,
         title: classInfo.label,
-        description: classInfo.description.substring(0, 80) + '...',
+        description: classInfo.description.substring(0, 100),
         link: classInfo.route,
         spotlightColor: 'primary' as const,
       };
