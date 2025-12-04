@@ -1,35 +1,26 @@
 {
   "fahrschule": {
-    "name": "Platzhalter Fahrschule",
+    "name": "Fahrschule Remigius",
     "logo": "/default_images/logo_default.webp",
     "kontakt": {
-      "telefon": "0123 456789",
-      "email": "info@fuehrerschein.de"
+      "telefon": "+49 2158 800222",
+      "email": "info@fahrschule-remigius.de"
     }
   },
   "texte": {
-    "heroDescription": "Erfahre mehr über unsere moderne Fahrschulausbildung und unsere erfahrenen Fahrlehrer.",
-    "unserefaehrschuleDescription": "Erfahre mehr über unsere moderne Fahrschulausbildung und unsere erfahrenen Fahrlehrer.",
-    "ueberUnsIntro": "Seit über 20 Jahren sind wir deine Fahrschule des Vertrauens. Mit viel Herz, Erfahrung und modernster Ausstattung begleiten wir dich auf deinem Weg zum Führerschein.\n\nUnser Ziel ist es nicht nur, dir das Fahren beizubringen, sondern dich zu einem sicheren und verantwortungsvollen Verkehrsteilnehmer zu machen."
+    "heroDescription": "Die Fahrschule Remigius begleitet euch mit moderner Ausbildung sicher und entspannt zum Führerschein.",
+    "unserefaehrschuleDescription": "In der Fahrschule Remigius erwartet euch eine moderne Ausbildung mit persönlicher und individueller Betreuung. Ihr lernt die Theorie flexibel in übersichtlichen Theorieblöcken und könnt mit der App \"Fahrschulcard\" bequem von überall üben. Durch individuell abgestimmte Praxisausbildung, eine kostenlose Schnupperstunde im Theorieunterricht und persönliche Beratung bekommt ihr genau die Unterstützung, die ihr braucht.",
+    "ueberUnsIntro": "Willkommen in der Fahrschule Remigius in Grefrath! Bei uns steht ihr als Fahrschüler im Mittelpunkt – mit viel Geduld, Erfahrung und einer Ausbildung, die genau zu eurem Tempo passt. Wir begleiten euch vom ersten Beratungsgespräch rund um Führerschein und Fahren lernen bis zur praktischen Prüfung und darüber hinaus.\n\nDie Theorie gestaltet ihr flexibel in abgestimmten Theorieblöcken und könnt mit der App \"Fahrschulcard\" jederzeit und überall lernen und wiederholen. In der Praxis stimmen wir jede Fahrstunde individuell auf euer Können ab; ein besonderes Highlight ist unsere Motorradausbildung, bei der ihr – wenn möglich – direkt vom Motorrad aus betreut werdet. Nutzt gerne auch unsere kostenlose Schnupperstunde im Theorieunterricht und lernt uns persönlich kennen – wir freuen uns darauf, gemeinsam mit euch den Weg zum Führerschein zu gehen."
   },
   "standorte": [
     {
       "id": "hauptstandort",
-      "name": "Hauptstandort",
-      "adresse": "Musterstraße 123, 12345 Musterstadt",
-      "telefon": "+49 123 456789",
-      "oeffnungszeiten": "Mo-Fr: 8:00-18:00\nSa: 9:00-14:00\nSo: Geschlossen",
-      "googleMapsUrl": "https://maps.google.com/maps?q=Musterstra%C3%9Fe%20123,%2012345%20Musterstadt&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      "name": "Grefrath",
+      "adresse": "Vinkrather Str. 4, 47929 Grefrath",
+      "telefon": "+49 2158 800222",
+      "oeffnungszeiten": "Mo: ab 17:00\nDi: ab 17:00\nDo: ab 17:00",
+      "googleMapsUrl": "https://maps.google.com/maps?q=Vinkrather%20Str.%204%2C%2047929%20Grefrath&t=&z=15&ie=UTF8&iwloc=&output=embed",
       "istHauptstandort": true
-    },
-    {
-      "id": "zweigstelle-nord",
-      "name": "Zweigstelle Nordeee",
-      "adresse": "Nordstraße 456, 54321 Nordstadt",
-      "telefon": "+49 987 654321",
-      "oeffnungszeiten": "Mo-Fr: 9:00-17:00\nSa: 10:00-15:00\nSo: Geschlossen",
-      "googleMapsUrl": "https://maps.google.com/maps?q=Nordstra%C3%9Fe%20456,%2054321%20Nordstadt&t=&z=15&ie=UTF8&iwloc=&output=embed",
-      "istHauptstandort": false
     }
   ],
   "fuehrerscheinklassen": {
@@ -39,7 +30,7 @@
     },
     "B": {
       "aktiv": true,
-      "unterklassen": ["B", "BE", "BF17"]
+      "unterklassen": ["B", "BE", "BF17", "B96"]
     },
     "C": {
       "aktiv": true,
