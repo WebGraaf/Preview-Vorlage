@@ -1,29 +1,25 @@
 {
   "gallerieStapel": [
     {
-      "src": "/kunde_bilder_download/bild-7.webp",
+      "src": "/default_images/Platzhalter_Fahrschule.webp",
       "alt": "Fahrschule Bild 1"
     },
     {
-      "src": "/kunde_bilder_download/bild-6.webp",
+      "src": "/default_images/Platzhalter_Furhpark.webp",
       "alt": "Fahrschule Bild 2"
     },
     {
-      "src": "/kunde_bilder_download/bild-1.jpg",
-      "alt": "Fahrschule Bild 3"
-    },
-    {
-      "src": "/kunde_bilder_download/bild-2.webp",
+      "src": "/default_images/Platzhalter_Gruppenbild_Team.webp",
       "alt": "Fahrschule Bild 3"
     }
   ],
   "bildVergleich": {
-    "leftImage": "/kunde_bilder_download/bild-2.webp",
-    "rightImage": "/kunde_bilder_download/bild-6.webp"
+    "leftImage": "/default_images/Platzhalter_Fahrschule.webp",
+    "rightImage": "/default_images/Platzhalter_Furhpark.webp"
   },
-  "professionelleFahrausbildung": "/kunde_bilder_download/bild-6.webp",
-  "topmodernerFuhrpark": "/kunde_bilder_download/bild-3.jpg",
-  "unsereWerte": "/kunde_bilder_download/bild-1.jpg",
+  "professionelleFahrausbildung": "/default_images/Platzhalter_Fahrschule.webp",
+  "topmodernerFuhrpark": "/default_images/Platzhalter_Furhpark.webp",
+  "unsereWerte": "/default_images/Platzhalter_Fahrschule.webp",
   "team": [
     {
       "imageSrc": "/default_images/Platzhalter_Teammitglied.webp",
