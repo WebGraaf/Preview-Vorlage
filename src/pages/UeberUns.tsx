@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Container, Section } from '../components/LayoutComponents';
 import { TeamBilder } from '../components/TeamBilder';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useConfig } from '../config';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -90,38 +91,40 @@ const SplitMediaTextCopy: React.FC<{
 };
 
 const UeberUns: React.FC = () => {
+  const { config, bilderConfig } = useConfig();
   const { elementRef: headerRef, isVisible: headerVisible } = useScrollReveal();
   const { elementRef: teamHeaderRef, isVisible: teamHeaderVisible } = useScrollReveal();
 
-  const teamMembers1 = [
-    {
-      imageSrc: PlatzhalterTeammitglied,
-      imageAlt: 'Michael Schmidt - Geschäftsführer',
-      title: 'Michael Schmidt',
-      description: 'Geschäftsführer und Fahrlehrer seit 20 Jahren. Mit Leidenschaft und Geduld bringt er jedem das sichere Fahren bei.',
-    },
-    {
-      imageSrc: PlatzhalterTeammitglied,
-      imageAlt: 'Sarah Müller - Fahrlehrerin',
-      title: 'Sarah Müller',
-      description: 'Fahrlehrerin für Klasse B und A. Bekannt für ihre ruhige Art und ihre verständlichen Erklärungen.',
-    },
+  // Get intro text from config with fallback
+  const ueberUnsIntro = config?.texte?.ueberUnsIntro || 'Seit über 20 Jahren sind wir deine Fahrschule des Vertrauens. Mit viel Herz, Erfahrung und modernster Ausstattung begleiten wir dich auf deinem Weg zum Führerschein.\n\nUnser Ziel ist es nicht nur, dir das Fahren beizubringen, sondern dich zu einem sicheren und verantwortungsvollen Verkehrsteilnehmer zu machen.';
+  
+  // Split intro text by double newline to create paragraphs
+  const introParagraphs = ueberUnsIntro.split('\n\n');
+
+  // Get images from bilder-config with fallbacks
+  const unsereWerteImage = bilderConfig?.unsereWerte || PlatzhalterFahrschule;
+  
+  // Get team members from bilder-config with fallbacks
+  const teamMembersFromConfig = bilderConfig?.team || [
+    { imageSrc: PlatzhalterTeammitglied, name: 'Michael Schmidt', description: 'Geschäftsführer und Fahrlehrer seit 20 Jahren. Mit Leidenschaft und Geduld bringt er jedem das sichere Fahren bei.' },
+    { imageSrc: PlatzhalterTeammitglied, name: 'Sarah Müller', description: 'Fahrlehrerin für Klasse B und A. Bekannt für ihre ruhige Art und ihre verständlichen Erklärungen.' },
+    { imageSrc: PlatzhalterTeammitglied, name: 'Thomas Weber', description: 'Spezialist für LKW-Führerscheine. Mit über 15 Jahren Erfahrung im Bereich Berufskraftfahrer-Ausbildung.' },
+    { imageSrc: PlatzhalterTeammitglied, name: 'Lisa Hoffmann', description: 'Unsere freundliche Büroleiterin. Sie kümmert sich um alle organisatorischen Fragen und Anmeldungen.' }
   ];
 
-  const teamMembers2 = [
-    {
-      imageSrc: PlatzhalterTeammitglied,
-      imageAlt: 'Thomas Weber - Fahrlehrer',
-      title: 'Thomas Weber',
-      description: 'Spezialist für LKW-Führerscheine. Mit über 15 Jahren Erfahrung im Bereich Berufskraftfahrer-Ausbildung.',
-    },
-    {
-      imageSrc: PlatzhalterTeammitglied,
-      imageAlt: 'Lisa Hoffmann - Büroleiterin',
-      title: 'Lisa Hoffmann',
-      description: 'Unsere freundliche Büroleiterin. Sie kümmert sich um alle organisatorischen Fragen und Anmeldungen.',
-    },
-  ];
+  // Convert team members to the format expected by TeamBilder component
+  const teamMembers = teamMembersFromConfig.map(member => ({
+    imageSrc: member.imageSrc,
+    imageAlt: `${member.name}`,
+    title: member.name,
+    description: member.description || '',
+  }));
+
+  // Split team members into rows of 2 for desktop display
+  const teamRows: typeof teamMembers[] = [];
+  for (let i = 0; i < teamMembers.length; i += 2) {
+    teamRows.push(teamMembers.slice(i, i + 2));
+  }
 
   return (
     <div className="bg-page-bg">
@@ -151,12 +154,14 @@ const UeberUns: React.FC = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-text-heading mb-6">
               Über uns
             </h1>
-            <p className="text-lg text-text-body leading-relaxed mb-4">
-              Seit über 20 Jahren sind wir deine Fahrschule des Vertrauens. Mit viel Herz, Erfahrung und modernster Ausstattung begleiten wir dich auf deinem Weg zum Führerschein.
-            </p>
-            <p className="text-lg text-text-body leading-relaxed">
-              Unser Ziel ist es nicht nur, dir das Fahren beizubringen, sondern dich zu einem sicheren und verantwortungsvollen Verkehrsteilnehmer zu machen.
-            </p>
+            {introParagraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className={`text-lg text-text-body leading-relaxed ${index < introParagraphs.length - 1 ? 'mb-4' : ''}`}
+              >
+                {paragraph}
+              </p>
+            ))}
           </div>
         </Container>
       </section>
@@ -177,7 +182,7 @@ const UeberUns: React.FC = () => {
       <section className="py-16">
         <Container>
           <SplitMediaTextCopy
-            imageSrc={PlatzhalterFahrschule}
+            imageSrc={unsereWerteImage}
             imageAlt="Unsere Werte"
             title="Unsere Werte"
             description="Lernen soll Spaß machen! Deshalb gestalten wir unseren Unterricht abwechslungsreich, praxisnah und auf Augenhöhe. Wir nehmen uns Zeit für deine Fragen und gehen auf deine individuellen Bedürfnisse ein. Dein Erfolg ist unser Antrieb - gemeinsam erreichen wir dein Ziel!"
@@ -207,8 +212,13 @@ const UeberUns: React.FC = () => {
           </div>
 
           <div className="space-y-8">
-            <TeamBilder teams={teamMembers1} variant="default" />
-            <TeamBilder teams={teamMembers2} variant="muted" />
+            {teamRows.map((row, index) => (
+              <TeamBilder
+                key={index}
+                teams={row}
+                variant={index % 2 === 0 ? 'default' : 'muted'}
+              />
+            ))}
           </div>
         </Container>
       </section>

@@ -11,6 +11,47 @@ export interface Fahrschule {
   kontakt: FahrschuleKontakt;
 }
 
+export interface Texte {
+  heroDescription: string;
+  unserefaehrschuleDescription: string;
+  ueberUnsIntro: string;
+}
+
+// Image configuration types
+export interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
+export interface TeamMember {
+  imageSrc: string;
+  name: string;
+  description?: string;
+}
+
+export interface ImageConfig {
+  // Startseite - Bilderstapel (1-n images)
+  gallerieStapel: GalleryImage[];
+  
+  // Startseite - Vorher/Nachher Bildvergleich
+  bildVergleich: {
+    leftImage: string;
+    rightImage: string;
+  };
+  
+  // Startseite - Professionelle Fahrausbildung
+  professionelleFahrausbildung: string;
+  
+  // Startseite - Topmoderner Fuhrpark
+  topmodernerFuhrpark: string;
+  
+  // Über uns - Unsere Werte
+  unsereWerte: string;
+  
+  // Über uns - Team (1-n members with name tags)
+  team: TeamMember[];
+}
+
 export interface Standort {
   id: string;
   name: string;
@@ -51,6 +92,7 @@ export interface Fuehrerscheinklassen {
 
 export interface FahrschuleConfig {
   fahrschule: Fahrschule;
+  texte?: Texte;
   standorte: Standort[];
   fuehrerscheinklassen: Fuehrerscheinklassen;
 }

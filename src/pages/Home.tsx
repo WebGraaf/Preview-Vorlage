@@ -12,30 +12,31 @@ import { FAQ } from '../components/FAQ';
 import { useConfig } from '../config';
 
 const Home: React.FC = () => {
-  const { config, loading, getLocationsForDisplay } = useConfig();
+  const { config, bilderConfig, loading, getLocationsForDisplay } = useConfig();
 
   // Get dynamic data from config
   const fahrschuleName = config?.fahrschule.name || 'Fahrschule';
   const logo = config?.fahrschule.logo || '/default_images/logo_default.webp';
   
+  // Get text content from config with fallbacks
+  const heroDescription = config?.texte?.heroDescription || 'Erfahre mehr über unsere moderne Fahrschulausbildung und unsere erfahrenen Fahrlehrer.';
+  const unserefaehrschuleDescription = config?.texte?.unserefaehrschuleDescription || 'Erfahre mehr über unsere moderne Fahrschulausbildung und unsere erfahrenen Fahrlehrer.';
+  
   // Get locations from config
   const locations = getLocationsForDisplay();
 
-  // Daten für TextGalerieStapel
-  const galleryImages = [
-    {
-      src: '/default_images/Platzhalter_Fahrschule.webp',
-      alt: 'Fahrschule Bild 1'
-    },
-    {
-      src: '/default_images/Platzhalter_Furhpark.webp',
-      alt: 'Fahrschule Bild 2'
-    },
-    {
-      src: '/default_images/Platzhalter_Gruppenbild_Team.webp',
-      alt: 'Fahrschule Bild 3'
-    }
+  // Get images from bilder-config with fallbacks
+  const galleryImages = bilderConfig?.gallerieStapel || [
+    { src: '/default_images/Platzhalter_Fahrschule.webp', alt: 'Fahrschule Bild 1' },
+    { src: '/default_images/Platzhalter_Furhpark.webp', alt: 'Fahrschule Bild 2' },
+    { src: '/default_images/Platzhalter_Gruppenbild_Team.webp', alt: 'Fahrschule Bild 3' }
   ];
+  
+  const bildVergleichLeft = bilderConfig?.bildVergleich?.leftImage || '/default_images/Platzhalter_Fahrschule.webp';
+  const bildVergleichRight = bilderConfig?.bildVergleich?.rightImage || '/default_images/Platzhalter_Furhpark.webp';
+  
+  const professionelleFahrausbildungImage = bilderConfig?.professionelleFahrausbildung || '/default_images/Platzhalter_Fahrschule.webp';
+  const topmodernerFuhrparkImage = bilderConfig?.topmodernerFuhrpark || '/default_images/Platzhalter_Furhpark.webp';
 
   // Daten für FAQ
   const faqs = [
@@ -80,7 +81,7 @@ const Home: React.FC = () => {
       <HeroStartseite
         title="Wir machen dich Mobil"
         subtitle={fahrschuleName}
-        description="Erfahre mehr über unsere moderne Fahrschulausbildung und unsere erfahrenen Fahrlehrer."
+        description={heroDescription}
         buttonText="Jetzt anmelden"
         buttonLink="/anmelden"
         logoSrc={logo}
@@ -91,7 +92,7 @@ const Home: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4">
           <TextGalerieStapel
             title="Unsere Fahrschule"
-            description="Erfahre mehr über unsere moderne Fahrschulausbildung und unsere erfahrenen Fahrlehrer."
+            description={unserefaehrschuleDescription}
             images={galleryImages}
             imagePosition="left"
           />
@@ -104,8 +105,8 @@ const Home: React.FC = () => {
 
       <section className="py-16">
         <VorherNacherBildVergleich
-          beforeImage="/default_images/Platzhalter_Fahrschule.webp"
-          afterImage="/default_images/Platzhalter_Furhpark.webp"
+          beforeImage={bildVergleichLeft}
+          afterImage={bildVergleichRight}
           beforeLabel=""
           afterLabel=""
         />
@@ -128,7 +129,7 @@ const Home: React.FC = () => {
       <section className="py-16">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <SplitMediaText
-            imageSrc="/default_images/Platzhalter_Fahrschule.webp"
+            imageSrc={professionelleFahrausbildungImage}
             imageAlt="Fahrschule Ausbildung"
             title="Professionelle Fahrausbildung"
             description="Bei uns erhältst du eine erstklassige Fahrausbildung von zertifizierten Fahrlehrern. Wir legen Wert auf individuelle Betreuung und moderne Lehrmethoden, um dich sicher auf die Straße zu bringen."
@@ -140,7 +141,7 @@ const Home: React.FC = () => {
       <section className="py-16">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <SplitMediaTextInvert
-            imageSrc="/default_images/Platzhalter_Furhpark.webp"
+            imageSrc={topmodernerFuhrparkImage}
             imageAlt="Moderner Fuhrpark"
             title="Topmoderner Fuhrpark"
             description="Unser Fahrzeugpark umfasst die neuesten Modelle verschiedener Automarken. Alle Fahrzeuge sind perfekt gewartet und erfüllen höchste Sicherheitsstandards für Ihre optimale Ausbildung."

@@ -1,0 +1,35 @@
+{
+  "gallerieStapel": [
+    {
+      "src": "/default_images/Platzhalter_Fahrschule.webp",
+      "alt": "Fahrschule Bild 1"
+    },
+    {
+      "src": "/default_images/Platzhalter_Furhpark.webp",
+      "alt": "Fahrschule Bild 2"
+    },
+    {
+      "src": "/default_images/Platzhalter_Gruppenbild_Team.webp",
+      "alt": "Fahrschule Bild 3"
+    }
+  ],
+  "bildVergleich": {
+    "leftImage": "/default_images/Platzhalter_Fahrschule.webp",
+    "rightImage": "/default_images/Platzhalter_Furhpark.webp"
+  },
+  "professionelleFahrausbildung": "/default_images/Platzhalter_Fahrschule.webp",
+  "topmodernerFuhrpark": "/default_images/Platzhalter_Furhpark.webp",
+  "unsereWerte": "/default_images/Platzhalter_Fahrschule.webp",
+  "team": [
+    {
+      "imageSrc": "/default_images/Platzhalter_Teammitglied.webp",
+      "name": "Michael Schmidt",
+      "description": "Geschäftsführer und Fahrlehrer seit 20 Jahren. Mit Leidenschaft und Geduld bringt er jedem das sichere Fahren bei."
+    },
+    {
+      "imageSrc": "/default_images/Platzhalter_Teammitglied.webp",
+      "name": "Sarah Müller",
+      "description": "Fahrlehrerin für Klasse B und A. Bekannt für ihre ruhige Art und ihre verständlichen Erklärungen."
+    }
+  ]
+}

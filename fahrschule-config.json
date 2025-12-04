@@ -7,6 +7,11 @@
       "email": "info@fuehrerschein.de"
     }
   },
+  "texte": {
+    "heroDescription": "Erfahre mehr über unsere moderne Fahrschulausbildung und unsere erfahrenen Fahrlehrer.",
+    "unserefaehrschuleDescription": "Erfahre mehr über unsere moderne Fahrschulausbildung und unsere erfahrenen Fahrlehrer.",
+    "ueberUnsIntro": "Seit über 20 Jahren sind wir deine Fahrschule des Vertrauens. Mit viel Herz, Erfahrung und modernster Ausstattung begleiten wir dich auf deinem Weg zum Führerschein.\n\nUnser Ziel ist es nicht nur, dir das Fahren beizubringen, sondern dich zu einem sicheren und verantwortungsvollen Verkehrsteilnehmer zu machen."
+  },
   "standorte": [
     {
       "id": "hauptstandort",

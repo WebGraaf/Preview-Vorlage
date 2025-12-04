@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { 
-  FahrschuleConfig, 
-  HauptklasseCode, 
-  Standort, 
+import {
+  FahrschuleConfig,
+  ImageConfig,
+  HauptklasseCode,
+  Standort,
   standortToLocationDisplay,
   LocationDisplay,
   KLASSEN_ROUTES,
@@ -11,6 +12,7 @@ import {
 
 interface ConfigContextType {
   config: FahrschuleConfig | null;
+  bilderConfig: ImageConfig | null;
   loading: boolean;
   error: string | null;
   // Helper functions
@@ -31,23 +33,33 @@ interface ConfigProviderProps {
 
 export const ConfigProvider: React.FC<ConfigProviderProps> = ({ children }) => {
   const [config, setConfig] = useState<FahrschuleConfig | null>(null);
+  const [bilderConfig, setBilderConfig] = useState<ImageConfig | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/fahrschule-config.json')
-      .then(res => {
+    // Load both config files in parallel
+    Promise.all([
+      fetch('/fahrschule-config.json').then(res => {
         if (!res.ok) {
-          throw new Error(`Failed to load config: ${res.status}`);
+          throw new Error(`Failed to load fahrschule-config: ${res.status}`);
+        }
+        return res.json();
+      }),
+      fetch('/bilder-config.json').then(res => {
+        if (!res.ok) {
+          throw new Error(`Failed to load bilder-config: ${res.status}`);
         }
         return res.json();
       })
-      .then((data: FahrschuleConfig) => {
-        setConfig(data);
+    ])
+      .then(([fahrschuleData, bilderData]: [FahrschuleConfig, ImageConfig]) => {
+        setConfig(fahrschuleData);
+        setBilderConfig(bilderData);
         setLoading(false);
       })
       .catch(err => {
-        console.error('Error loading fahrschule-config.json:', err);
+        console.error('Error loading config files:', err);
         setError(err.message);
         setLoading(false);
       });
@@ -96,6 +108,7 @@ export const ConfigProvider: React.FC<ConfigProviderProps> = ({ children }) => {
 
   const value: ConfigContextType = {
     config,
+    bilderConfig,
     loading,
     error,
     isClassActive,
